@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --bg-prim: #121212;
+    --bg-scnd: #1E1E1E;
+    --font: #E0E0E0;
+    --brdr: #333333;
+}
+
+body{
+    height: 100%;
+    background-color: var(--bg-prim);
+    color: #B3B3B3;
+    font-family: 'Montserrat', sans-serif;
+}
