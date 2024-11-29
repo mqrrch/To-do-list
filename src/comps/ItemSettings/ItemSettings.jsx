@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import './ItemSettings.css'
 
-export function ItemSettings({ removeToDo, id }){
+export function ItemSettings({ removeToDo, id, isEditing, setIsEditing, inputRef }){
     const [settingsOpen, setSettingsOpen] = useState(false)
     const handleOpenSettings = () => setSettingsOpen(true)
     const handleCloseSettings = () => setSettingsOpen(false)
@@ -17,7 +17,12 @@ export function ItemSettings({ removeToDo, id }){
 
     function handleRemove(id) {
         removeToDo(id);
-        console.log('Task removed!');
+        handleCloseSettings();
+    }
+
+    function handleEditing() {
+        setIsEditing(true);
+        setTimeout(() => inputRef.current?.focus(), 0);
         handleCloseSettings();
     }
 
@@ -39,7 +44,8 @@ export function ItemSettings({ removeToDo, id }){
                     onClick={(e) => e.stopPropagation()}
                     style={{top: `${pos.top + 25}px`, left: `${pos.left - 20}px`}}>
     
-                        <a className='settings-item item-edit'>Edit Task</a>
+                        <a className='settings-item item-edit'
+                        onClick={() => handleEditing()}>Edit Task</a>
                         
                         <a className='settings-item item-remove' 
                         onClick={() => handleRemove(id)} >Remove Task</a>

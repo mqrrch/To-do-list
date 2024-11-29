@@ -53,7 +53,13 @@ function App() {
 
       <div id='items-container'>
         <AddItem onSubmit={addToDo} />
-        <ItemList toDoItems={toDoItems} setToDoItems={setToDoItems} toggleCheckbox={toggleCheckbox} removeToDo={removeToDo} />
+
+        <ItemList toDoItems={toDoItems} 
+        setToDoItems={setToDoItems} 
+        toggleCheckbox={toggleCheckbox} 
+        removeToDo={removeToDo}
+        editToDo={editToDo} />
+
       </div>
 
     </>
