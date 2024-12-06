@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { ItemList } from './comps/ItemList/ItemList'
-import { AddItem } from './comps/AddItem/AddItem'
+import { ItemList } from './comps/Task/ItemList/ItemList'
+import { AddItem } from './comps/Task/AddItem/AddItem'
 import './App.css'
 
 function App() {
@@ -36,6 +36,11 @@ function App() {
     })
   }
 
+  function removeAllToDo() {
+    setToDoItems([])
+    console.log(toDoItems)
+  }
+
   function editToDo(id, newName) {
     setToDoItems(currentList => {
       return currentList.map(item => {
@@ -52,7 +57,9 @@ function App() {
       <h2 id='title'>To Do List</h2>
 
       <div id='items-container'>
-        <AddItem onSubmit={addToDo} />
+        <AddItem onSubmit={addToDo}
+        toDoItems={toDoItems}
+        removeAllToDo={removeAllToDo} />
 
         <ItemList toDoItems={toDoItems} 
         setToDoItems={setToDoItems} 

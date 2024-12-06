@@ -1,9 +1,9 @@
 .item{
     display: flex;
     align-items: center;
-    height: 40px;
+    height: 39px;
     gap: 20px;
-    border-bottom: 1px solid var(--bg-scnd);
+    border-bottom: 2px solid var(--bg-scnd);
 }
 
 .item-check{

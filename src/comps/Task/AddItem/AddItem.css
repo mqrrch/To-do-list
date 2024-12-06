@@ -1,0 +1,17 @@
+#item-input-form{
+    margin-left: 20px;
+}
+
+#item-input{
+    width: 12em;
+    height: 1.5em;
+    /* border: none;
+    background-color: var(--bg-scnd);
+    color: var(--font); */
+}
+
+#item-submit,
+#item-remove-all{
+    margin-left: 20px;
+    padding: .8px;
+}

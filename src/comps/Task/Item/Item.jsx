@@ -1,16 +1,16 @@
 import { useState, useRef } from 'react'
 import { ItemSettings } from '../ItemSettings/ItemSettings'
-import { } from '../../App'
+import { } from '../../../App'
 import './Item.css'
 
-export function Item({ id, itemName, completed, toggleCheckbox, removeToDo, editToDo }){
+export function Item({ id, itemName, completed, toDoItems, toggleCheckbox, removeToDo, editToDo }){
     const [isEditing, setIsEditing] = useState(false)
-    const [newName, setNewName] = useState('')
+    const [newName, setNewName] = useState(itemName)
     const inputRef = useRef(null)
 
     function handleSave() {
         if (newName.trim() === ''){
-            setNewName(itemName);
+            removeToDo(id);
         } else{
             editToDo(id, newName)
         }
@@ -38,7 +38,7 @@ export function Item({ id, itemName, completed, toggleCheckbox, removeToDo, edit
             <ItemSettings removeToDo={removeToDo} 
             id={id}
             inputRef={inputRef}
-            isEditing={isEditing}
+            toDoItems={toDoItems}
             setIsEditing={setIsEditing} />
 
         </li>

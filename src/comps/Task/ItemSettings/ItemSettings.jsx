@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import './ItemSettings.css'
 
-export function ItemSettings({ removeToDo, id, isEditing, setIsEditing, inputRef }){
+export function ItemSettings({ removeToDo, id, toDoItems, setIsEditing, inputRef }){
     const [settingsOpen, setSettingsOpen] = useState(false)
     const handleOpenSettings = () => setSettingsOpen(true)
     const handleCloseSettings = () => setSettingsOpen(false)
@@ -13,7 +13,7 @@ export function ItemSettings({ removeToDo, id, isEditing, setIsEditing, inputRef
             const { top, left } = elementRef.current.getBoundingClientRect();
             setPos({top, left});
         }
-    }, [])
+    }, [toDoItems])
 
     function handleRemove(id) {
         removeToDo(id);
