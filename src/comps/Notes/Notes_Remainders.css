@@ -1,0 +1,18 @@
+#notes-remainders{
+    display: flex;
+    flex-direction: column;
+    margin-left: 4rem;
+    margin-top: 2rem;
+}
+
+#remainders{
+    margin-top: 2rem;
+}
+
+#note-text, #remainder-text{
+    margin-top: 5px;
+    width: 25em;
+    height: 10em;
+    resize: none;
+    font-size: 16px;
+}

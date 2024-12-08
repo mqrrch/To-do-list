@@ -1,7 +1,7 @@
 import { useState } from "react"
 import './AddItem.css'
 
-export function AddItem({ onSubmit, toDoItems, removeAllToDo }){
+export function AddItem({ addToDo, toDoItems, removeAllToDo }){
     const [itemName, setItemName] = useState('')
     
     const handleSubmit = (e) => {
@@ -9,9 +9,16 @@ export function AddItem({ onSubmit, toDoItems, removeAllToDo }){
 
         if (itemName === '') return;
 
-        onSubmit(itemName);
+        addToDo(itemName);
 
         setItemName('');
+    }
+
+    const handleRemoveAll = (e) => {
+        e.preventDefault();
+
+        if (toDoItems.length === 0) return;
+        removeAllToDo()
     }
 
     return (
@@ -31,7 +38,7 @@ export function AddItem({ onSubmit, toDoItems, removeAllToDo }){
                     <button id="item-remove-all" onClick={removeAllToDo}>Remove All</button>
                 </form>
             ) : (
-                <form id="item-input-form" onSubmit={handleSubmit}>
+                <form id="item-input-form" >
                     <input id='item-input'
                     placeholder="Enter task" 
                     maxLength={20}
@@ -44,7 +51,7 @@ export function AddItem({ onSubmit, toDoItems, removeAllToDo }){
                     value='Add Task'
                     onClick={handleSubmit} />
 
-                    <button id="item-remove-all" onClick={removeAllToDo}>Remove All</button>
+                    <button id="item-remove-all" onClick={handleRemoveAll}>Remove All</button>
                 </form>
             )}
         </>
