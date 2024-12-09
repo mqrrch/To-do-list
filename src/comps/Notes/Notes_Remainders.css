@@ -11,8 +11,14 @@
 
 #note-text, #remainder-text{
     margin-top: 5px;
+    padding: 3px;
     width: 25em;
     height: 10em;
     resize: none;
     font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--font);
+    background-color: var(--bg-prim);
+    border: 3px solid var(--brdr);
+    border-radius: 4px;
 }

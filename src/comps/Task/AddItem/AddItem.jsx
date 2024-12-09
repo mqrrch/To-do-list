@@ -18,7 +18,8 @@ export function AddItem({ addToDo, toDoItems, removeAllToDo }){
         e.preventDefault();
 
         if (toDoItems.length === 0) return;
-        removeAllToDo()
+
+        removeAllToDo();
     }
 
     return (
@@ -35,13 +36,13 @@ export function AddItem({ addToDo, toDoItems, removeAllToDo }){
                     value='Add Task'
                     disabled />
 
-                    <button id="item-remove-all" onClick={removeAllToDo}>Remove All</button>
+                    <button id="item-remove-all" onClick={handleRemoveAll}>Remove All</button>
                 </form>
             ) : (
                 <form id="item-input-form" >
                     <input id='item-input'
                     placeholder="Enter task" 
-                    maxLength={20}
+                    maxLength={25}
                     onChange={e => setItemName(e.target.value)}
                     value={itemName}
                     onKeyDown={e => e.key === 'Enter' && handleSubmit(e)} />

@@ -3,6 +3,6 @@
     height: 27em;
     margin: 20px;
     padding: 10px;
-    border: 4px solid var(--bg-scnd);
+    border: 4px solid var(--brdr);
     border-radius: 10px;
 }

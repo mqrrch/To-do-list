@@ -6,9 +6,9 @@
     width: 14em;
     height: 1.5em;
     background-color: var(--bg-prim);
-    border: 2px solid var(--bg-scnd);
+    border: 3px solid var(--brdr);
     border-radius: 5px;
-    padding: 11px;
+    padding: 12.4px;
     padding-left: 5px;
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
@@ -26,9 +26,16 @@
     margin-left: 20px;
     padding: 4px 10px;
     font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
     background-color: var(--bg-prim);
-    border: 2px solid var(--bg-scnd);
+    border: 3px solid var(--brdr);
     border-radius: 5px;
     color: var(--font);
     cursor: pointer;
+}
+
+#item-input:disabled,
+#item-submit:disabled{
+    cursor: default;
+    opacity: 25%;
 }

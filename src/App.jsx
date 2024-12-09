@@ -1,4 +1,4 @@
-import { Task } from './comps/Task/Task.jsx'
+import { Task_Full } from './comps/Task/Task_Full.jsx'
 import { NotesAndRemainders } from './comps/Notes/Notes_Remainders.jsx'
 import './App.css'
 
@@ -8,7 +8,7 @@ function App() {
     <>
       <h2 id='title'>To Do List</h2>
       <div id='container'>
-        <Task />
+        <Task_Full />
         <NotesAndRemainders />
       </div>
     </>

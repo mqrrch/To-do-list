@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { ItemList } from './ItemList/ItemList'
 import { AddItem } from './AddItem/AddItem'
-import './Task.css'
+import './Task_Full.css'
 
-export function Task() {
+export function Task_Full() {
   const [toDoItems, setToDoItems] = useState([])
 
   function addToDo(itemName) {
