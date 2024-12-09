@@ -1,10 +1,18 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ItemList } from './ItemList/ItemList'
 import { AddItem } from './AddItem/AddItem'
 import './Task_Full.css'
 
 export function Task_Full() {
-  const [toDoItems, setToDoItems] = useState([])
+  const [toDoItems, setToDoItems] = useState(() => {
+    const localValue = localStorage.getItem("ITEMS");
+    if (localValue === null) return [];
+    return JSON.parse(localValue);
+  })
+
+  useEffect(() => {
+    localStorage.setItem("ITEMS", JSON.stringify(toDoItems))
+  }, [toDoItems])
 
   function addToDo(itemName) {
     setToDoItems(currentList => {
