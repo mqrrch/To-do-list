@@ -33,6 +33,10 @@ body{
 }
 
 @media only screen and (max-width: 1000px){
+    #title{
+        text-align: center;
+    }
+
     #container{
         display: flex;
         flex-direction: column;
